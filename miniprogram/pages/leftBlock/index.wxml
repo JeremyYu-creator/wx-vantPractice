@@ -1,0 +1,69 @@
+<!--pages/leftBlock/index.wxml-->
+<view wx:if="{{arr.length < 4}}">
+  <view wx:for="{{arr}}" wx:key="value">
+    {{item.key}}: {{item.value}}
+  </view>
+</view>
+<view wx:elif="{{arr.length >= 4}}">
+  长度超过4了</view>
+<view class="left-style">{{text}}</view>
+<view class="left">{{"hello " + name}}</view>
+<cover-image src="/assets/success.png" ></cover-image>
+<!--展示下拉情况的下拉列表-->
+<scroll-view scroll-y="true" style="height: 100rpx" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" >
+  <view id="first">第一</view>
+  <view id="second">第二</view>
+  <view id="third">第三</view>
+  <view id="fourth">第六</view>
+</scroll-view>
+<view class="swiper-content">
+  <view class="swiper-item">
+    <swiper indicator-dots="{{indicatorDots}}" duration="{{duration}}" autoplay="{{autoplay}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>{{item}}</swiper-item></block>
+    </swiper>
+  </view>
+</view>
+<view>
+  <input type="text" bindinput="catchInput" placeholder="请输入"/>
+  <view class="left">{{inputText}}123</view>
+  <input class="weui-input"  maxlength="10" bindinput="bindKeyInput" placeholder="输入同步到view中"/>
+  <view class="weui-cells__title">实时获取输入值：{{inputValue}}</view>
+</view>
+<view>
+  <checkbox-group bindchange="changeLabel">
+    <view wx:for="{{exe}}" wx:key="*this">
+      <label>
+        <checkbox value="{{item.key}}" checked="{{item.checked}}"></checkbox>
+        <text>{{item.value}}</text>
+      </label>
+    </view>
+  </checkbox-group>
+</view>
+<picker bindchange="pickerChange" value="{{index}}" range="{{exe}}" range-key="{{'key'}}">
+  <view>
+    当前选择了: {{exe[index].key}}
+  </view>
+</picker>
+<picker mode="date" start="2021-11-01" bindchange="changeDate" value="{{date}}">
+  <view>
+    当前选择了: {{date}}
+  </view>
+</picker>
+<picker mode="time" start="00:00:00" end="23:59:59" bindchange="changeTime" value="{{time}}">
+  <view>
+    当前选择了: {{time}}  
+  </view>
+</picker>
+<view>
+  <navigator url="/pages/route-page/index">跳转页面</navigator>
+</view>
+<view>
+  <canvas type="2d" id="myCanvas"></canvas>
+</view>
+<van-tabbar active="{{ activeName }}" bind:change="changeTabBar">
+    <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
+    <van-tabbar-item name="search" icon="search">左侧页</van-tabbar-item>
+    <van-tabbar-item name="friends" icon="friends-o">右侧页</van-tabbar-item>
+    <van-tabbar-item name="log" icon="setting-o">日志</van-tabbar-item>
+</van-tabbar>

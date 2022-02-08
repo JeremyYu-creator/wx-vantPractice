@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="main">
+  <view class="container">
+    <view class="userinfo">
+      <block wx:if="{{canIUseOpenData}}">
+        <view class="userinfo-avatar" bindtap="bindViewTap">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <open-data type="userNickName"></open-data>
+      </block>
+      <block wx:elif="{{!hasUserInfo}}">
+        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+        <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+      </block>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <view class="usermotto">
+      <text class="user-motto">{{motto}}</text>
+    </view>
+  </view>
+  <view class="authority">
+    <view class="vantbtn-style">
+      <van-button type="primary" bindtap="getUserProfile" plain>点击获取用户信息</van-button>
+    </view>
+    <view class="vantbtn-style">
+      <van-button type="info" bindtap="getUserLocationInfo" loading="{{placeLoading}}">点击获取用户地理位置</van-button>
+    </view>
+    <view class="vantbtn-style">
+      <van-button type="warning" bindtap="getUserRunData">点击获取用户微信步数</van-button>
+    </view>
+  </view>
+</view>
+<van-tabbar active="{{ activeName }}" bind:change="changeTabBar">
+    <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
+    <van-tabbar-item name="search" icon="search">左侧页</van-tabbar-item>
+    <van-tabbar-item name="friends" icon="friends-o">右侧页</van-tabbar-item>
+    <van-tabbar-item name="log" icon="setting-o">日志</van-tabbar-item>
+</van-tabbar>

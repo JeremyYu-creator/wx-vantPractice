@@ -1,0 +1,11 @@
+.btn-style,
+.btn-style-special {
+  display: flex;
+  justify-content: center;
+}
+.btn-style {
+  margin-top: 40rpx;
+}
+.btn-style-special {
+  margin-top: calc(50% + 40rpx);
+}

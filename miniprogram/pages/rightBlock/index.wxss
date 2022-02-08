@@ -1,0 +1,25 @@
+/* pages/rightBlock/index.wxss */
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+.main .half-style {
+  background: #969799;
+  height: 500rpx;
+}
+.main .half-style .cell-style {
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.main .popup-text {
+  margin: 30rpx;
+}
+.main .slider-style {
+  margin: 40rpx;
+}
+.main .slider-style .special {
+  background-color: #ebedf0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

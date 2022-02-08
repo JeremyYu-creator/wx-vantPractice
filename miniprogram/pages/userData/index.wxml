@@ -1,0 +1,17 @@
+<!--pages/userData/index.wxml-->
+<text>pages/userData/index.wxml</text>
+<view class="main">
+    <view class="btn-style">
+        <van-button type='primary' bindtap="clickLocation">查看当前地理位置</van-button>
+    </view>
+    <view class="btn-style">
+        <van-button type='info' bindtap='clickSelectLocation'>查看select选项</van-button>
+    </view>
+    <view class="btn-style-special">
+        <van-button type='danger' bindtap='clickGetPhoneInfo'>查看当前设备信息</van-button>
+    </view>
+    <view class="system-list">
+        {{test}}
+        {{systemList}}
+    </view>
+</view>

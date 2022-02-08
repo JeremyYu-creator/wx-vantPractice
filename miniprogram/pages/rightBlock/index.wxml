@@ -1,0 +1,118 @@
+<!--pages/rightBlock/index.wxml-->
+<van-skeleton title row="3" loading="{{firstLoading}}"/>
+<view wx:if="{{!firstLoading}}" class="right-container">
+    <van-sticky>
+        <van-notice-bar left-icon="info-o" mode="closeable" scrollable text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。" />
+    </van-sticky>
+    <view class="title">
+        <text>pages/rightBlock/index.wxml</text>
+        <van-icon name="replay" size="50rpx"/>
+    </view>
+    <view class="main">
+        <view class="half-style">
+            <view class="cell-style">
+                <van-cell-group inset>
+                    <van-cell title="单元格" value="内容"></van-cell>
+                    <van-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
+                    <van-cell value="内容" is-link bindtap="showData" arrow-direction="{{isShow ? 'down' : ''}}">
+                        <view slot="title" wx:if="{{isShow}}">
+                            单元格
+                        </view>
+                    </van-cell>
+                    <!-- <view wx:if="{{isShow}}">隐藏的文字</view> -->
+                </van-cell-group>
+            </view>
+        </view>
+        <view>
+            <van-icon name="shopping-cart-o" />
+            <van-icon name="chat-o" info="9" />
+        </view>
+        <view class="block">
+            <van-search value="{{searchValue}}" placeholder="请输入搜索关键词" bind:change="onChange" bind:search="onSearch"  bind:cancel="onCancel" show-action use-action-slot>
+                <view slot="action" bind:tap="onSearch">搜索</view>
+                <view slot="action" bind:tap="onCancel">取消</view>
+            </van-search>
+        </view>
+        <view class="slider-style">
+            <van-slider value="50" bind:change="showChange" />
+        </view>
+        <view class="slider-style">
+            <van-stepper></van-stepper>
+        </view>
+        <view class="slider-style">
+            <van-button bindtap="showSheet">点击展示sheet</van-button>
+        </view>
+        <view class="slider-style">
+            <van-button bindtap="showShareBtn">分享</van-button>
+        </view>
+        <view class="slider-style">
+            <view class="special">
+                <van-circle value="{{ value }}" color="{{ gradientColor }}" text="{{value}}" layer-color="black"/>
+                <van-button type="info" bindtap="addClick">增加</van-button>
+                <van-button bindtap="decreaseClick">减少</van-button>
+            </view>
+        </view>
+        <view class="slider-style">
+            <van-count-down
+                class="control-count-down"
+                millisecond
+                time="{{ 30000 }}"
+                auto-start="{{ false }}"
+                format="ss:SSS"
+                bind:finish="finished"
+            />
+            <van-grid clickable column-num="3">
+                <van-grid-item text="开始" icon="play-circle-o" bindclick="start" />
+                <van-grid-item text="暂停" icon="pause-circle-o" bindclick="pause" />
+                <van-grid-item text="重置" icon="replay" bindclick="reset" />
+            </van-grid>
+        </view>
+        <view class="slider-style">
+            <van-empty image="error" description="描述文字" />
+        </view>
+        <view class="slider-style">
+            <van-button type="primary">点击查看树列</van-button>
+        </view>
+        <view class="slider-style">
+            <van-steps steps="{{ steps }}" active="{{ active }}" />
+        </view>
+        <view class="slider-style">
+            hahhahahahha
+        </view>
+        <van-share-sheet
+            show="{{ showShare }}"
+            title="立即分享给好友"
+            options="{{ options }}"
+            bind:select="selectShare"
+            bind:close="closeShare"
+        />
+        <van-action-sheet
+            show="{{ show }}"
+            actions="{{ actions }}"
+            bind:close="closeIt"
+            bind:select="selectIt"
+            />
+        <van-popup
+            show="{{ isShow }}"
+            closeable
+            round
+            close-icon="close"
+            position="bottom"
+            custom-style="height: 20%"
+            bind:close="onClose"
+            close-on-click-overlay="{{touchTag}}"
+            >
+            <view class="popup-text">
+                hhhahahhaha
+            </view>
+        </van-popup>
+        <van-toast id="van-toast" />
+        <van-dialog id="van-dialog" />
+    </view>
+</view>
+<van-tabbar active="{{ activeName }}" bind:change="changeTabBar">
+    <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
+    <van-tabbar-item name="search" icon="search">左侧页</van-tabbar-item>
+    <van-tabbar-item name="friends" icon="friends-o">右侧页</van-tabbar-item>
+    <van-tabbar-item name="log" icon="setting-o">日志</van-tabbar-item>
+</van-tabbar>
