@@ -7,6 +7,7 @@
 <view wx:elif="{{arr.length >= 4}}">
   长度超过4了</view>
 <view class="left-style">{{text}}</view>
+<Component-Text></Component-Text>
 <view class="left">{{"hello " + name}}</view>
 <cover-image src="/assets/success.png" ></cover-image>
 <!--展示下拉情况的下拉列表-->

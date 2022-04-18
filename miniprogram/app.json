@@ -1,9 +1,9 @@
 {
-  "entryPagePath": "pages/userData/index",
+  "entryPagePath":  "pages/logs/logs",
   "pages": [
+    "pages/index/index",
     "pages/userData/index",
     "pages/rightBlock/index",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/leftBlock/index",
     "pages/route-page/index",
