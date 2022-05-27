@@ -1,15 +1,25 @@
 {
   "name": "miniprogram-ts-less-quickstart",
   "version": "1.0.0",
-  "description": "",
+  "description": "a project for wx + ts",
   "scripts": {},
   "keywords": [],
   "author": "",
-  "license": "",
+  "license": "ISC",
   "dependencies": {
     "@vant/weapp": "^1.9.2"
   },
   "devDependencies": {
+    "miniprogram-api-promise": "^1.0.4",
     "miniprogram-api-typings": "^2.12.0"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeremyYu-creator/wx-vantPractice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JeremyYu-creator/wx-vantPractice/issues"
+  },
+  "homepage": "https://github.com/JeremyYu-creator/wx-vantPractice#readme"
 }

@@ -1,0 +1,9 @@
+<!--components/test3/index.wxml-->
+<text>components/test3/index.wxml</text>
+<view>
+  <slot name="first"></slot>
+  <view>1231231312312</view>
+  <view>{{propNumber}}</view>
+  <button bindtap="addChildNumber">增加子数字</button>
+  <view>{{childNumber}}</view>
+</view>

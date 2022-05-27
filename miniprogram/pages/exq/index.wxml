@@ -1,0 +1,5 @@
+<!--pages/exq/index.wxml-->
+<text>节流和下拉触发</text>
+<view wx:for="{{columnList}}" wx:key="index" class="container-item" style="background-color: rgba({{item}});">
+  <view>{{item}}</view>
+</view>

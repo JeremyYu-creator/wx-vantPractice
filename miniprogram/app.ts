@@ -1,4 +1,7 @@
 // app.ts
+// import { promisifyAll } from 'miniprogram-api-promise'
+// const wxp = (wx as any).p = {}
+// promisifyAll(wx, wxp)
 App<IAppOption>({
   globalData: {},
   onLaunch() {

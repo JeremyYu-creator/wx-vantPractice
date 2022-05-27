@@ -11,12 +11,19 @@ Page({
       mode: '',
     },
     test:1,
+    userName:'',
+    query: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  onLoad(options) {
+    this.setData({
+      userName:options.name,
+      query: options
+    })
+    console.log(options,1111,this.data.userName, this.data.query)
     wx.startLocationUpdateBackground({
       type: 'gjc02',
       success(res: any) {

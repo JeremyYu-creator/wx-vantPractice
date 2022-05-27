@@ -6,6 +6,25 @@
   <view>
     <canvas id="circle" width="300" height="300" type='2d'></canvas>
   </view>
+  <view class="log-tab">
+    <van-tabs active="{{ active }}" bind:tap="onChange"  wx:for="{{tabData}}" wx:key="index">
+      <van-tab title="{{ item.name }}">{{item.name}}</van-tab>
+      <!-- <van-tab title="标签 2">内容 2</van-tab>
+      <van-tab title="标签 3">内容 3</van-tab>
+      <van-tab title="标签 4">内容 4</van-tab> -->
+    </van-tabs>
+  </view>
+  <view class="block">
+    <view>A</view>
+    <view>B</view>
+    <view>C</view>
+  </view>
+  <view class="tap">
+    <button type="primary" bindtap="count" data-num="{{2}}">点击</button>
+  </view>
+  <view>
+    <van-input bindinput="put"></van-input>
+  </view>
 <van-tabbar active="{{ activeName }}" bind:change="changeTabBar">
     <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
     <van-tabbar-item name="search" icon="search">左侧页</van-tabbar-item>

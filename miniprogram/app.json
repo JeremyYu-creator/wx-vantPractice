@@ -1,19 +1,40 @@
 {
-  "entryPagePath":  "pages/logs/logs",
+  "entryPagePath":  "pages/exp/index",
   "pages": [
+    "pages/exq/index",
+    "pages/exm/index",
+    "pages/exp/index",
     "pages/index/index",
     "pages/userData/index",
     "pages/rightBlock/index",
     "pages/logs/logs",
     "pages/leftBlock/index",
     "pages/route-page/index",
-    "pages/individual/connect/connect"
+    "pages/individual/connect/connect",
+    "pages/shopList/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "我的程序",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#efefef"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/exm/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/exp/index",
+        "text": "内容"
+      },
+      {
+        "pagePath": "pages/exq/index",
+        "text": "我的"
+      }
+    ]
   },
   "permission":{
     "scope.userLocation":{
@@ -22,6 +43,9 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
+    "test-components":"/components/text/text",
+    "test2-components":"/components/test2/index",
+    "test3-components":"/components/test3/index",
     "van-button": "@vant/weapp/button/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",

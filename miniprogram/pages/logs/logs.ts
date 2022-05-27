@@ -6,6 +6,26 @@ Page({
   data: {
     logs: [],
     activeName: 'log',
+    active: 1,
+    tabData:[
+      {
+        name: '标签一',
+        index: 1,
+      },
+      {
+        name: '标签二',
+        index: 2,
+      },
+      {
+        name: '标签三',
+        index: 3,
+      },
+      {
+        name: '标签四',
+        index: 4,
+      },
+    ],
+    count:0,
   },
   changeTabBar(e: any) {
     if (e.detail === 'friends') {
@@ -29,6 +49,19 @@ Page({
     //   url: '../rightBlock/index'
     // })
     console.log(e.detail)
+  },
+  onChange(event: any) {
+    console.log(12321, event)
+    wx.showToast({
+      title: `切换到标签 ${event.detail.name}`,
+      icon: 'none',
+    });
+  },
+  count(e:any) {
+    this.setData({
+      count: this.data.count + e.target.dataset.num
+    })
+    console.log(this.data.count, e)
   },
   onReady() {
     const query = wx.createSelectorQuery() // 获取dom结点

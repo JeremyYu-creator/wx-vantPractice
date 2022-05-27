@@ -1,0 +1,35 @@
+<!--pages/exm/index.wxml-->
+<view class="exm-style">
+  <view>
+   <swiper class="swiper-style" indicator-dots="true" autoplay="true" circular="true">
+    <!-- <swiper-item wx:for="{{picList}}" wx:key="name">
+      <image src="{{item.src}}" class="img-style"></image>
+      <view>123</view>
+    </swiper-item> -->
+    <swiper-item wx:for="{{swiperList}}" wx:key="id">
+      <image src="{{item.image}}" class="img-style"></image>
+      <view>123</view>
+    </swiper-item>
+   </swiper>
+   <view class="block">
+      <view wx:for="{{mixList}}" wx:key="icon" class="block-item" bindtap="goTo" data-id="{{item.id}}" data-name="{{item.name}}">
+        <image src="{{item.icon}}" class="icon-style"></image>
+        <text class="block-name" data-id="{{item.id}}">{{item.name}}</text>
+      </view>
+   </view>
+   <!-- <view class="qw">asdds</view>
+   <view>
+    <test-components isSum="false"/>
+   </view> -->
+   <view>
+    <test2-components/>
+   </view>
+   <!-- <view>
+    <van-button type='primary' bindtap="goTo">点击</van-button>
+   </view>
+   <view>
+      <text>{{count}}</text>
+      <van-button type='danger' bindtap="countNumber">点击+1</van-button>
+    </view> -->
+  </view>
+</view>

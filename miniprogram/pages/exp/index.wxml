@@ -1,0 +1,20 @@
+<!--pages/exp/index.wxml-->
+<text>pages/exp/index.wxml</text>
+<view>{{m1.toUpper(userName)}}</view>
+<view wx:if="{{judge}}">测试if展示</view>
+<view wx:for="{{arr}}" wx:key="index" wx:for-item="person">
+  {{person.name}}{{index}}
+</view>
+<view>
+  <button type="primary" bindtap="test">点击</button>
+</view>
+<view>父组件值{{setNUmber}}</view>
+<view>
+  <test3-components propNumber="{{propNumber}}" bind:postData="postData" class="test3">
+    <view slot="first">哈哈哈哈哈</view>
+  </test3-components>
+</view>
+<view bindtap="getChild">
+  点击获取子组件实例
+</view>
+<wxs src="./exp.wxs" module="m1"></wxs>

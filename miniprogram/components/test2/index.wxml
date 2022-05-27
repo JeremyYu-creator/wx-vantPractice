@@ -1,0 +1,9 @@
+<!--components/test2/index.wxml-->
+<text>components/test2/index.wxml</text>
+<!-- <view>{{n1}} + {{n2}} = {{sum}}</view>
+<button bindtap="addCount" data-type="1">n1+1</button>
+<button bindtap="addCount" data-type="2">n2+1</button> -->
+<view style="background-color: rgb({{fullColor}}); height: 50rpx; color: white;">{{rgb.r}} {{rgb.g}} {{rgb.b}}当前颜色是:{{fullColor}}</view>
+<button type="primary" bindtap="changeColor" data-letter="r">加r</button>
+<button type="default" bindtap="changeColor" data-letter="g">加g</button>
+<button type="warn" bindtap="changeColor" data-letter="b">加b</button>

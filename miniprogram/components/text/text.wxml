@@ -1,2 +1,5 @@
 <view>我是text文本组件</view>
-<view>{{title}}</view>
+<view class="qw">{{title}}</view>
+<button type="primary" bindtap="addCount">点击增加</button>
+<view class="qw">{{num}}</view>
+<view class="qw">{{isSum ? '1' : '2'}}</view>
